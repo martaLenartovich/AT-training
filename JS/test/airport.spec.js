@@ -41,7 +41,6 @@ describe('Airport Tests', () => {
         assert.isTrue(expectedPlaneWithMaxPassengersCapacity.getPassengersCapacity() == planeWithMaxPassengerCapacity.getPassengersCapacity());
     });
 
-
     it('should check that next passenger plane has higher max load capacity', () => {
         airport.sortByMaxLoadCapacity();
         let planesSortedByMaxLoadCapacity = airport.getPassengerPlanes();

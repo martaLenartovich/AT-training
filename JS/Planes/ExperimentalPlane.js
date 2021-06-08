@@ -7,7 +7,6 @@ class ExperimentalPlane extends Plane
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.type = type;
         this.classificationLevel = classificationLevel;
-
     }
 
     getType() {

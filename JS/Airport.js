@@ -32,20 +32,21 @@ class Airport {
     getPassengerPlaneWithMaxPassengersCapacity() {
         let passengerPlanes = this.getPassengerPlanes();
         let planeWithMaxCapacity = passengerPlanes[0];
-        for (let i = 0; i < passengerPlanes.length; i++) {
-            if (passengerPlanes[i].getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
-                planeWithMaxCapacity = passengerPlanes[i];
+        for (let passengerPlane of passengerPlanes) {
+            if (passengerPlane.getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
+                planeWithMaxCapacity = ppassengerPlane;
             }
         }
         return planeWithMaxCapacity;
     }
+
     getTransportMilitaryPlanes(){
         let transportMilitaryPlanes = [];
         let militaryPlanes = this.getMilitaryPlanes();
-        for (let i = 0; i < militaryPlanes.length; i++) {
-        if (militaryPlanes[i].getMilitaryType() == MilitaryType.TRANSPORT) {
-        transportMilitaryPlanes.push(militaryPlanes[i]);
-        }
+        for (let militaryPlane of militaryPlanes) {
+            if (militaryPlane.getMilitaryType() == MilitaryType.TRANSPORT) {
+                transportMilitaryPlanes.push(militaryPlane);
+            }
         }
         return transportMilitaryPlanes;
     }
@@ -54,9 +55,9 @@ class Airport {
     {
         let bomberMilitaryPlanes = [];
         let militaryPlanes = this.getMilitaryPlanes();
-        for (let i = 0; i < militaryPlanes.length; i++) {
-            if (militaryPlanes[i].getMilitaryType()=== MilitaryType.BOMBER) {
-                bomberMilitaryPlanes.push(militaryPlanes[i]);
+        for (let militaryPlane of militaryPlanes) {
+            if (militaryPlane.getMilitaryType()=== MilitaryType.BOMBER) {
+                bomberMilitaryPlanes.push(militaryPlane);
             }
         }
         return bomberMilitaryPlanes;
@@ -87,9 +88,6 @@ class Airport {
     getPlanes() {
         return this.planes;
     }
-
-
-
 
     static print(planes) {
         return JSON.stringify(planes);
